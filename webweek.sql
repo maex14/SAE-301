@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 13 déc. 2024 à 15:13
+-- Généré le : ven. 13 déc. 2024 à 09:19
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -70,19 +70,11 @@ CREATE TABLE IF NOT EXISTS `formation` (
 DROP TABLE IF EXISTS `inscription`;
 CREATE TABLE IF NOT EXISTS `inscription` (
   `id_inscription` int NOT NULL AUTO_INCREMENT,
-  `civilite` enum('M.','Mme','Autre') NOT NULL,
   `nom` varchar(255) NOT NULL,
-  `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `adresse` text,
-  `ville` varchar(255) DEFAULT NULL,
-  `departement` varchar(255) DEFAULT NULL,
-  `code_postal` varchar(10) DEFAULT NULL,
-  `telephone` varchar(20) DEFAULT NULL,
-  `niveau` varchar(255) DEFAULT NULL,
   `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `id_evenement` int DEFAULT NULL,
-  `commentaire` text COMMENT 'Commentaires supplémentaires',
+  `commentaire` text,
   PRIMARY KEY (`id_inscription`),
   KEY `id_evenement` (`id_evenement`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
