@@ -1,76 +1,8 @@
 /* Déclaration des variables de couleurs */
 :root {
-    --blue-primary: #0004FF;
-    --white: #FFFFFF;
-    --gray-light: #F3F3F3;
-    --gray-dark: #A9A9A9; /* Gris foncé pour les bordures */
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--white);
-    color: #333;
-}
-
-/* Style du titre */
-.form-title {
-    color: var(--blue-primary);
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-/* Section du formulaire */
-.form-section {
-    background-color: var(--gray-light);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Champs de texte personnalisés */
-.custom-input {
-    background-color: var(--white); /* Fond blanc */
-    border: 1px solid var(--gray-dark); /* Bordure gris foncé */
-    border-radius: 5px; /* Coins arrondis */
-    padding: 10px 15px; /* Espacement interne */
-    color: #333; /* Couleur du texte */
-    font-size: 1rem;
-    width: 100%; /* Largeur à 100% */
-}
-
-/* Effet au focus des champs */
-.custom-input:focus {
-    border-color: var(--blue-primary); /* Bordure bleue au focus */
-    box-shadow: 0 0 0 0.2rem rgba(0, 4, 255, 0.25);
-    outline: none; /* Retire l'outline par défaut */
-}
-
-/* Style des labels */
-.form-label {
-    font-weight: bold;
-    color: var(--blue-primary);
-}
-
-/* Bouton Terminer */
-.btn-primary {
-    background-color: var(--blue-primary);
-    border-color: var(--blue-primary);
-    color: var(--white);
-    border-radius: 5px; /* Coins arrondis */
-    padding: 0.75rem 1.5rem;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    transform: scale(1.05);
-    background-color: var(--blue-primary);
-}
-
-/* Ajustement pour aligner le bouton à gauche */
-.button-container {
-    text-align: left;
+    --blue-primary: #0004FF; 
+    --white: #FFFFFF; 
+    --gray-light: #F3F3F3; 
 }
 
 /* Style général du footer */
@@ -95,7 +27,7 @@ footer {
 .footer-title {
     background-color: var(--white); 
     color: var(--blue-primary);
-    border-radius: 5px;
+    border-radius: 10px;
     display: inline-block;
     padding: 8px 20px;
     text-align: center;
@@ -141,7 +73,7 @@ footer a:hover {
 .btn-inscription {
     background-color: var(--white); 
     color: var(--blue-primary) !important; 
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: bold;
     padding: 8px 20px;
     text-decoration: none;
