@@ -1,0 +1,367 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Regular.ttf');
+    font-weight: 400; /* Normal (Regular) */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi Medium';
+    src: url('fonts/Satoshi-Medium.ttf');
+    font-weight: 500; /* Medium */
+    font-style: medium;
+}
+
+@font-face {
+    font-family: 'Satoshi Bold';
+    src: url('fonts/Satoshi-Bold.ttf');
+    font-style: bold;
+    font-weight: 800; /* Medium */
+
+}
+
+body{
+    font-family: 'Satoshi';
+}
+
+/* FOOTER */
+:root {
+    --blue-primary: #0004FF;
+    --white: #FFFFFF;
+    --gray-light: #F3F3F3;
+}
+
+/* Style général du footer */
+footer {
+    background-color: var(--blue-primary); 
+    color: var(--white);
+    padding: 40px 0;
+    margin-top: 50px;
+    font-family: 'Satoshi Medium';
+    border-radius: 30px 30px 0 0;
+}
+
+/* Logo de la tortue */
+.footer-logo {
+    display: block;
+    margin-bottom: 20px;
+    width: 50px;
+    height: auto;
+}
+
+/* Titres dans un bloc rond */
+.footer-title {
+    background-color: var(--white);
+    color: var(--blue-primary);
+    border-radius: 5px;
+    display: inline-block;
+    padding: 8px 20px;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Satoshi Bold';
+}
+
+/* Espacement et alignement des contenus */
+.footer-column {
+    text-align: left;
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column a {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: var(--white);
+}
+
+/* Liens et icônes */
+footer a {
+    color: var(--white);
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--white);
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Bouton Inscrivez-vous */
+.btn-inscription {
+    background-color: var(--white);
+    color: var(--blue-primary) !important;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.btn-inscription:hover {
+    transform: scale(1.1);
+    background-color: var(--white);
+        text-decoration: none;
+}
+
+/* Mention légale */
+.mentions-legales {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--white);
+    border-top: 1px solid var(--white);
+    padding-top: 20px;
+}
+/* FOOTER */
+
+
+.navbar-toggler {
+    border-color: #0004FF; /* Bordure en bleu */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,4,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    /* Change l'icône en bleu */
+}
+
+.navbar-nav .btn-outline-primary {
+    font-size: 1.2rem;
+    padding: 10px 20px; /* Ajuste le rembourrage interne */
+    font-weight: bold; /* Garde une apparence visible */
+    border-radius: 100px; /* Angle arrondi pour un design plus élégant */
+    border-color: #0004FF; /* Bordure bleue */
+    color: #0004FF; /* Couleur du texte en bleu */
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    background-color: #0004FF; /* Couleur de fond en bleu au survol */
+    color: white; /* Texte en blanc lors du survol */
+}
+
+.logo-navbar {
+    height: 50px; /* Ajustez la hauteur selon vos besoins */
+    width: auto; /* Maintient les proportions de l'image */
+    max-width: 100%; /* Empêche le débordement */
+}
+
+.custom-navbar {
+    padding-top: 4%; /* Ajustez la valeur selon vos besoins */
+}
+
+/* Animation pour les liens dans la version normale */
+.navbar-nav .nav-link {
+    color: #0004FF; /* Texte en bleu */
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: inline-block; /* Assure que l'élément est en ligne pour que le trait suive la largeur */
+    transition: color 0.3s ease; /* Transition douce pour la couleur */
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0; /* Place le trait sous le texte */
+    left: 0;
+    width: 0; /* Commence à 0 (invisible) */
+    height: 2px; /* Épaisseur du trait */
+    background-color: #0004FF; /* Couleur du trait */
+    transition: width 0.3s ease; /* Animation douce */
+}
+
+/* Version desktop */
+.navbar-nav .nav-link:hover {
+    color: #0004FF; /* Assure que le texte reste bleu au survol */
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%; /* Le trait s'étend sur toute la largeur */
+}
+
+/* Version mobile - Ajuste le comportement pour ne pas dépasser la largeur du texte */
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease; /* Garder la transition sur le texte */
+        display: inline-block; /* Assure que l'élément est en ligne pour que le trait suive la largeur */
+        position: relative; /* Nécessaire pour le pseudo-élément */
+    }
+
+    .navbar-nav .nav-link::after {
+        transition: width 0.3s ease; /* Garder la transition du trait */
+        width: 0; /* Par défaut, le trait reste invisible */
+        max-width: 100%; /* Limiter le trait à la largeur du texte */
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%; /* Le trait s'étend au survol */
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #0004FF; /* Assure que le texte reste bleu au survol */
+    }
+}
+
+/* Espacement entre les éléments de la navbar */
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 20px; /* Crée un espace entre chaque élément, sauf le dernier */
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-left: 20px; /* Crée un espace avant le bouton inscription */
+    
+}
+
+/* Pour les versions mobiles */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item:not(:last-child) {
+        margin-right: 0px; /* Réduit l'espace entre les éléments sur mobile */
+        
+    }
+    .navbar-nav .nav-item:last-child {
+        margin-left: 0px; /* Réduit l'espace avant le bouton sur mobile */
+        margin-top: 10px;
+
+    }
+}
+
+/* Section personnalisée */
+.custom-section {
+    font-family: 'Satoshi Medium';
+    display: flex;
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Centre verticalement */
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.custom-text {
+    color: #0004FF; /* Modification ici */
+    font-size: 1.4rem;
+    line-height: 1.5;
+    max-width: 600px; /* Texte limité en largeur */
+}
+
+.custom-title {
+    font-family: 'Satoshi Bold';
+    color: #0004FF; /* Modification ici */
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.custom-paragraph {
+    margin-bottom: 30px;
+}
+
+.btn-custom {
+    font-family: 'Satoshi Bold', sans-serif;
+    font-size: 18px; /* Réduit légèrement la taille pour un meilleur équilibre */
+    background-color: #0004FF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 30px; /* Espacement horizontal plus généreux */
+    border-radius: 8px; /* Arrondi les bords */
+    cursor: pointer;
+    transform: scale(1); /* Taille normale */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Effet fluide */
+}
+
+.btn-custom:hover {
+    transform: scale(1.1); /* Agrandissement fluide */
+    background-color: #0003CC; /* Légère variation de couleur au survol */
+    color: white;
+}
+
+
+.rounded-image {
+    border-radius: 50%; /* Crée un rond parfait */
+    width: 350px; /* Taille fixe */
+    height: 350px; /* Même hauteur pour garder un rond */
+    object-fit: cover; /* Maintient l'image centrée et proportionnée */
+}
+
+.partners-title {
+    color: #0004FF; /* Couleur bleue que vous souhaitez */
+    font-weight: bold;
+    font-size: 2rem; /* Ajustez la taille de la police selon votre besoin */
+}
+
+.partner-logo {
+    width: 100px;        /* Largeur uniforme pour tous les logos */
+    height: 100px;       /* Hauteur uniforme pour tous les logos */
+    object-fit: contain; /* Contient l'image sans la déformer */
+    margin: 0 20px;      /* Espacement entre les logos */
+    display: inline-block;
+}
+
+/* Admin Card Styling */
+.admin-card {
+    border: 2px solid #0004FF; /* Bordure bleue */
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: 8px 8px 0px #000; /* Ombre décalée en noir */
+    text-align: left;
+    padding: 20px;
+    background-color: #F3F3F3; /* Fond légèrement gris */
+    position: relative; /* Pour positionner l'icône */
+    overflow: hidden; /* Cache débordements */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.admin-card h3 {
+    background-color: #0004FF;
+    color: #FFF;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.admin-card p {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Flèche icône */
+.admin-card .icon-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: #0004FF;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card .icon-arrow img {
+    width: 50%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+h2.text-primary {
+    font-family: 'Satoshi Bold';
+    font-weight: 700;
+    color: #0004FF !important;
+}
