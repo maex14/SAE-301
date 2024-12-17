@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : ven. 13 déc. 2024 à 09:19
+-- Généré le : mar. 17 déc. 2024 à 17:03
 -- Version du serveur : 8.3.0
 -- Version de PHP : 8.2.18
 
@@ -24,42 +24,52 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `comptes`
+--
+
+DROP TABLE IF EXISTS `comptes`;
+CREATE TABLE IF NOT EXISTS `comptes` (
+  `id_compte` int NOT NULL AUTO_INCREMENT,
+  `nom` varchar(50) NOT NULL,
+  `prenom` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
+  `role` enum('admin','utilisateur') DEFAULT 'utilisateur',
+  PRIMARY KEY (`id_compte`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `evenement`
 --
 
 DROP TABLE IF EXISTS `evenement`;
 CREATE TABLE IF NOT EXISTS `evenement` (
   `id_evenement` int NOT NULL AUTO_INCREMENT,
+  `titre` varchar(255) NOT NULL,
   `date_evenement` date NOT NULL,
-  `lieu` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  PRIMARY KEY (`id_evenement`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Déchargement des données de la table `evenement`
---
-
-INSERT INTO `evenement` (`id_evenement`, `date_evenement`, `lieu`, `description`) VALUES
-(1, '2023-09-30', 'Saint-Cyr sur Mer', 'Organisation d\'une sortie en mer avec Azur-Plongée. 4 plongées prévues, hébergement en chambres collectives, transport en minibus.'),
-(2, '2024-10-15', 'Lac d’Issarlès', 'Exploration des fonds rocheux et observation des écosystèmes aquatiques. Repas partagé au bord du lac.'),
-(3, '2024-12-23', 'Lac du Bouchet', 'Sortie conviviale avec deux plongées encadrées pour tous niveaux. Co-voiturage proposé, pique-nique à partager.');
+  `lieu` varchar(255) DEFAULT NULL,
+  `description` text,
+  `id_lieu` int DEFAULT NULL,
+  PRIMARY KEY (`id_evenement`),
+  KEY `id_lieu` (`id_lieu`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `formation`
+-- Structure de la table `formations`
 --
 
-DROP TABLE IF EXISTS `formation`;
-CREATE TABLE IF NOT EXISTS `formation` (
+DROP TABLE IF EXISTS `formations`;
+CREATE TABLE IF NOT EXISTS `formations` (
   `id_formation` int NOT NULL AUTO_INCREMENT,
-  `nom` varchar(255) NOT NULL,
-  `description` text NOT NULL,
-  `date_debut` date NOT NULL,
-  `date_fin` date NOT NULL,
+  `nom_formation` varchar(100) NOT NULL,
+  `description` text,
   PRIMARY KEY (`id_formation`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -70,14 +80,40 @@ CREATE TABLE IF NOT EXISTS `formation` (
 DROP TABLE IF EXISTS `inscription`;
 CREATE TABLE IF NOT EXISTS `inscription` (
   `id_inscription` int NOT NULL AUTO_INCREMENT,
+  `civilite` enum('M.','Mme','Autre') NOT NULL,
   `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `date_inscription` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `id_evenement` int DEFAULT NULL,
+  `adresse` text,
+  `ville` varchar(255) DEFAULT NULL,
+  `departement` varchar(255) DEFAULT NULL,
+  `code_postal` varchar(10) DEFAULT NULL,
+  `telephone` varchar(20) DEFAULT NULL,
+  `niveau` varchar(255) DEFAULT NULL,
+  `date_inscription` datetime DEFAULT CURRENT_TIMESTAMP,
+  `id_formations` int DEFAULT NULL,
+  `id_compte` int DEFAULT NULL,
   `commentaire` text,
   PRIMARY KEY (`id_inscription`),
-  KEY `id_evenement` (`id_evenement`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `id_compte` (`id_compte`),
+  KEY `id_formations` (`id_formations`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `lieux`
+--
+
+DROP TABLE IF EXISTS `lieux`;
+CREATE TABLE IF NOT EXISTS `lieux` (
+  `id_lieu` int NOT NULL AUTO_INCREMENT,
+  `nom_lieu` varchar(100) NOT NULL,
+  `adresse` varchar(255) DEFAULT NULL,
+  `coordonnees_gps` varchar(50) DEFAULT NULL,
+  `description` text,
+  PRIMARY KEY (`id_lieu`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -91,20 +127,34 @@ CREATE TABLE IF NOT EXISTS `news` (
   `titre` varchar(255) NOT NULL,
   `date_publication` datetime NOT NULL,
   `contenu` text NOT NULL,
-  `auteur` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_news`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `auteur` varchar(100) DEFAULT NULL,
+  `id_evenement` int DEFAULT NULL,
+  PRIMARY KEY (`id_news`),
+  KEY `id_evenement` (`id_evenement`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `news`
+-- Contraintes pour les tables déchargées
 --
 
-INSERT INTO `news` (`id_news`, `titre`, `date_publication`, `contenu`, `auteur`) VALUES
-(1, 'SORTIE MER \"SPÉCIAL RENTRÉE\"', '2023-09-30 00:00:00', 'Organisation d\'une sortie en mer avec Azur-Plongée à Saint-Cyr sur Mer, 4 plongées prévues, limité à 19 plongeurs. Hébergement en chambres collectives, transport en minibus.', 'Marie ou Thierry'),
-(2, 'FIN DE SAISON!', '2024-06-12 00:00:00', 'Dernière session d\'entraînement piscine, plongées au Lac du Bouchet pour l\'été. Retour des cartes piscine demandé avant le 30 juin.', 'Non précisé'),
-(3, 'SORTIE \"PLONGÉE DÉCOUVERTE\" AU LAC DU BOUCHET', '2024-12-23 00:00:00', 'Sortie conviviale au Lac du Bouchet, deux plongées encadrées pour tous niveaux. Co-voiturage proposé, pique-nique à partager.', 'Laurence ou Hugo'),
-(4, 'SORTIE \"PLONGÉE EN ALTITUDE\" AU LAC D’ISSARLÈS', '2024-10-15 00:00:00', 'Sortie spéciale au Lac d’Issarlès, exploration des fonds rocheux et écosystèmes locaux. Repas partagé au bord du lac.', 'Non précisé'),
-(5, 'REPRISE DES ACTIVITÉS AU PUY : C’EST LA RENTRÉE DU CSP', '2024-10-04 00:00:00', 'Reprise des entraînements piscine, ateliers techniques et sessions pour débutants. Initiations à la plongée en eau froide et formations pour lacs d’altitude.', 'contact@csp-plongee.fr');
+--
+-- Contraintes pour la table `evenement`
+--
+ALTER TABLE `evenement`
+  ADD CONSTRAINT `evenement_ibfk_1` FOREIGN KEY (`id_lieu`) REFERENCES `lieux` (`id_lieu`) ON DELETE SET NULL;
+
+--
+-- Contraintes pour la table `inscription`
+--
+ALTER TABLE `inscription`
+  ADD CONSTRAINT `inscription_ibfk_1` FOREIGN KEY (`id_compte`) REFERENCES `comptes` (`id_compte`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  ADD CONSTRAINT `inscription_ibfk_2` FOREIGN KEY (`id_formations`) REFERENCES `formations` (`id_formation`) ON DELETE SET NULL ON UPDATE SET NULL;
+
+--
+-- Contraintes pour la table `news`
+--
+ALTER TABLE `news`
+  ADD CONSTRAINT `news_ibfk_1` FOREIGN KEY (`id_evenement`) REFERENCES `evenement` (`id_evenement`) ON DELETE SET NULL ON UPDATE SET NULL;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
