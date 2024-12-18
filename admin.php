@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/admin.css">
 </head>
+
 <body>
     <div class="container">
         <!-- Logo et Titre -->
@@ -15,7 +17,9 @@
                 <img src="img/logo.png" alt="Logo" class="admin-logo">
             </a>
             <h1>Page Admin</h1>
-            <p class="text-muted">Bienvenue sur la page d'administration ! <br>Cet espace est réservé aux administrateurs du site pour gérer facilement son contenu et ses fonctionnalités. <br>Voici ce que vous pouvez faire ici :</p>
+            <p class="text-muted">Bienvenue sur la page d'administration ! <br>Cet espace est réservé aux
+                administrateurs du site pour gérer facilement son contenu et ses fonctionnalités. <br>Voici ce que vous
+                pouvez faire ici :</p>
         </div>
 
         <!-- Section News -->
@@ -99,4 +103,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

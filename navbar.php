@@ -7,7 +7,8 @@
             </a>
 
             <!-- Bouton responsive -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -18,7 +19,7 @@
                         <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="lesnews.php">Les News</a>
+                        <a class="nav-link" href="les_news.php">Les News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Événements</a>
