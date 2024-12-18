@@ -1,294 +1,169 @@
-/* Déclaration des couleurs */
+/* Déclaration des variables de couleurs */
 :root {
-    --main-blue: #0000ff;
-    --white: #ffffff;
-    --light-blue: #f5f7ff;
-    --hover-blue: #003366;
-    --border-blue: #1e1e9c;
+    --blue-primary: #0004FF;
+    --white: #FFFFFF;
+    --gray-light: #F3F3F3;
+    --gray-dark: #A9A9A9; /* Gris foncé pour les bordures */
 }
 
-/* Styles généraux */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
     background-color: var(--white);
+    color: #333;
 }
 
-.logo-container {
-    flex: 1;
+/* Style du titre */
+.form-title {
+    color: var(--blue-primary);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
 
-.logo {
-    width: 40px;
+/* Section du formulaire */
+.form-section {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Champs de texte personnalisés */
+.custom-input {
+    background-color: var(--white); /* Fond blanc */
+    border: 1px solid var(--gray-dark); /* Bordure gris foncé */
+    border-radius: 5px; /* Coins arrondis */
+    padding: 10px 15px; /* Espacement interne */
+    color: #333; /* Couleur du texte */
+    font-size: 1rem;
+    width: 100%; /* Largeur à 100% */
+}
+
+/* Effet au focus des champs */
+.custom-input:focus {
+    border-color: var(--blue-primary); /* Bordure bleue au focus */
+    box-shadow: 0 0 0 0.2rem rgba(0, 4, 255, 0.25);
+    outline: none; /* Retire l'outline par défaut */
+}
+
+/* Style des labels */
+.form-label {
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+
+/* Bouton Terminer */
+.btn-primary {
+    background-color: var(--blue-primary);
+    border-color: var(--blue-primary);
+    color: var(--white);
+    border-radius: 5px; /* Coins arrondis */
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: var(--blue-primary);
+}
+
+/* Ajustement pour aligner le bouton à gauche */
+.button-container {
+    text-align: left;
+}
+
+/* Style général du footer */
+footer {
+    background-color: var(--blue-primary); 
+    color: var(--white);
+    padding: 40px 0;
+    margin-top: 50px;
+    font-family: Arial, sans-serif;
+    border-radius: 30px 30px 0px 0px ;
+}
+
+/* Logo de la tortue */
+.footer-logo {
+    display: block;
+    margin-bottom: 20px;
+    width: 50px; 
     height: auto;
 }
 
-.nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--main-blue);
-    font-size: 16px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-link:hover {
-    color: var(--hover-blue);
-}
-
-.btn-inscription {
-    text-decoration: none;
-    color: var(--main-blue);
-    border: 2px solid var(--border-blue);
-    padding: 5px 20px;
-    border-radius: 20px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-.btn-inscription:hover {
-    background-color: var(--main-blue);
-    color: var(--white);
-}
-
-
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-footer {
-    background-color: var(--main-blue);
-    color: var(--white);
-    font-family: Arial, sans-serif;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.footer-logo {
-    width: 50px;
-}
-
-.footer-nav {
-    display: flex;
-    justify-content: center;  /* Centrer la navigation */
-    flex: 1;
-}
-
-.footer-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-nav a {
-    color: var(--white); /* Texte blanc sur fond bleu */
-    text-decoration: none;
-    font-size: 16px;
-}
-
-.footer-nav a:hover {
-    text-decoration: underline;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 15px;
-    position: absolute;
-    right: 20px;
-}
-
-.footer-social img {
-    width: 30px;
-}
-
-.footer-middle {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--white);
-}
-
-.contact-info {
-    flex: 1;
-}
-
-.contact-info h3 {
-    background-color: var(--white);
-    color: var(--main-blue);
-    padding: 10px;
+/* Titres dans un bloc rond */
+.footer-title {
+    background-color: var(--white); 
+    color: var(--blue-primary);
+    border-radius: 5px;
     display: inline-block;
-    border-radius: 5px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-}
-
-.newsletter {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.newsletter form {
-    display: flex;
-    gap: 10px;
-    background-color: var(--white); /* Bloc blanc autour de l'input et du bouton */
-    padding: 20px;
-    border-radius: 5px;
-}
-
-.newsletter input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--light-blue);
-    flex: 1;
-}
-
-.newsletter button {
-    background-color: var(--main-blue);
-    color: var(--white);
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.newsletter button:hover {
-    background-color: var(--hover-blue);
-}
-
-.footer-bottom {
+    padding: 8px 20px;
     text-align: center;
-    margin-top: 20px;
-}
-
-.footer-bottom a {
-    color: var(--white);
-    text-decoration: none;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
-}
- /*page index*/
-
- /* Styles pour la section du formulaire */
-form {
-    background-color: var(--light-blue);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Titres principaux */
-h1 {
     font-weight: bold;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
 
-p {
-    margin-bottom: 30px;
-    line-height: 1.6;
+/* Espacement et alignement des contenus */
+.footer-column {
+    text-align: left; 
 }
 
-/* Champs du formulaire */
-.form-label {
-    font-weight: bold;
-    color: var(--main-blue);
+.footer-column p,
+.footer-column ul,
+.footer-column a {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: var(--white);
 }
 
-.form-control,
-.form-select {
-    border: 2px solid var(--border-blue);
+/* Liens et icônes */
+footer a {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--white);
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Bouton Inscrivez-vous */
+.btn-inscription {
+    background-color: var(--white); 
+    color: var(--blue-primary) !important; 
     border-radius: 5px;
-    transition: all 0.3s;
-}
-
-.form-control:focus,
-.form-select:focus {
-    border-color: var(--main-blue);
-    box-shadow: 0px 0px 5px rgba(0, 0, 255, 0.3);
-}
-
-/* Boutons */
-button {
-    background-color: var(--main-blue);
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
+    padding: 8px 20px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
-button:hover {
-    background-color: var(--hover-blue);
-    transform: scale(1.05);
+/* Effet au survol du bouton */
+.btn-inscription:hover {
+    transform: scale(1.1); 
+    background-color: var(--white); 
+    color: var(--blue-primary); 
+    text-decoration: none; 
 }
 
-/* Radio buttons */
-.form-check-input {
-    accent-color: var(--main-blue);
+/* Mention légale */
+.mentions-legales {
+    text-align: left;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--white);
+    border-top: 1px solid var(--white);
+    padding-top: 20px;
 }
 
-/* Textarea */
-textarea {
-    resize: none;
-}
-
-/* Ajustements responsives */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-}
-.tortue-image {
-    max-width: 100%; /* S'adapte à la taille de la colonne */
-    height: auto; /* Conserve les proportions */
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
