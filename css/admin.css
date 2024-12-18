@@ -86,3 +86,18 @@
     text-align: center;
 }
 
+/* Ajouter de l'espace sous la dernière carte */
+.row.justify-content-center {
+    margin-bottom: 40px; /* Espace supplémentaire sous la dernière carte */
+}
+
+/* Espacement entre les sections */
+h2.text-primary.fw-bold {
+    margin-bottom: 30px; /* Espace sous chaque titre */
+    margin-top: 50px; /* Espace au-dessus de chaque titre */
+}
+
+/* Espacement supplémentaire entre les groupes de cartes */
+.row.mb-4 {
+    margin-bottom: 50px; /* Espace supplémentaire entre les cartes */
+}
