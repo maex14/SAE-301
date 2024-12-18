@@ -1,0 +1,88 @@
+/* Styles pour les cartes */
+.admin-card {
+    border: 2px solid #0000FF; /* Bordure bleue */
+    border-radius: 20px; /* Coins arrondis */
+    box-shadow: 8px 8px 0px #000; /* Ombre décalée en noir */
+    text-align: left;
+    padding: 20px;
+    background-color: #F8F9FA; /* Fond légèrement gris */
+    position: relative; /* Pour positionner l'icône */
+    overflow: visible; /* Permet l'affichage complet */
+    width: 100%; /* Assure que toutes les cartes prennent la même largeur */
+    max-width: 350px; /* Largeur maximale pour uniformiser les cartes */
+    margin: auto; /* Centre les cartes horizontalement */
+}
+
+.admin-card h3 {
+    background-color: #0000FF; /* Fond bleu vif */
+    color: #FFF; /* Texte blanc */
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.admin-card p {
+    color: #0000FF; /* Texte bleu */
+    margin-bottom: 20px;
+    font-size: 1rem;
+    padding-right: 70px; /* Crée de l'espace pour la flèche */
+}
+
+/* Flèche dans le coin */
+.admin-card .icon-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: #0000FF; /* Cercle bleu vif */
+    border-radius: 50%; /* Cercle parfait */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Légère ombre */
+}
+
+.admin-card .icon-arrow img {
+    width: 50%; /* Ajuste la taille de l'icône */
+    height: auto;
+    transform: rotate(-5deg); /* Fait pointer la flèche vers le haut à droite */
+    filter: brightness(0) invert(1); /* Rend l'icône blanche */
+}
+
+/* Styles pour le haut de la page */
+.admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.admin-header .admin-logo {
+    width: 80px; /* Ajuste la taille du logo */
+    height: auto;
+    margin-bottom: 10px;
+    padding-top: 15px;
+}
+
+.admin-header h1 {
+    color: #0000FF; /* Titre en bleu vif */
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.admin-header p {
+    color: #0000FF !important;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin: 0;
+    text-align: center;
+}
+
