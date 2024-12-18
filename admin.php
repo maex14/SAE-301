@@ -13,7 +13,9 @@
     <div class="container">
         <!-- Logo et Titre -->
         <div class="admin-header">
-            <img src="img/logo.png" alt="Logo" class="admin-logo">
+            <a href="https://xn--webweek-club-vellave-plonge-0oc.website/" title="Retour à l'accueil">
+                <img src="img/logo.png" alt="Logo" class="admin-logo">
+            </a>
             <h1>Page Admin</h1>
             <p class="text-muted">Bienvenue sur la page d'administration ! <br>Cet espace est réservé aux
                 administrateurs du site pour gérer facilement son contenu et ses fonctionnalités. <br>Voici ce que vous

@@ -20,12 +20,15 @@
             <div class="custom-text">
                 <h1 class="custom-title">Qui sommes nous ?</h1>
                 <p class="custom-paragraph">
+
                     Bienvenue sur le site de CVP43, votre partenaire de confiance en Haute-Loire pour tous vos besoins
                     en services professionnels.
                     Que vous soyez une entreprise ou un particulier, nous mettons notre expertise et notre savoir-faire
                     à votre disposition
                     pour vous accompagner dans vos projets. Qualité, proximité et engagement sont au cœur de notre
                     mission pour vous offrir des solutions adaptées et performantes.
+
+                Le Club Vellave de Plongée (CVP43), basé au Puy-en-Velay en Haute-Loire, est une association affiliée à la Fédération Française d'Études et de Sports Sous-Marins (FFESSM). Animé par une passion commune pour le monde sous-marin, le club propose des formations à la plongée sous-marine, à l'apnée, ainsi qu'à d'autres activités aquatiques encadrées par la fédération. Ouvert aux débutants comme aux plongeurs confirmés, le CVP43 offre un cadre convivial pour partager des expériences uniques et découvrir les richesses des fonds marins, tout en respectant les valeurs de sécurité, d’apprentissage et de plaisir.
                 </p>
                 <a href="formulaire.php" class="btn btn-custom">Devenez membres</a>
             </div>
