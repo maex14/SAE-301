@@ -1,34 +1,17 @@
-@font-face {
-    font-family: 'Satoshi';
-    src: url('fonts/Satoshi-Regular.ttf');
-    font-weight: 400; /* Normal (Regular) */
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Satoshi Medium';
-    src: url('fonts/Satoshi-Medium.ttf');
-    font-weight: 500; /* Medium */
-    font-style: medium;
-}
-
-@font-face {
-    font-family: 'Satoshi Bold';
-    src: url('fonts/Satoshi-Bold.ttf');
-    font-style: bold;
-    font-weight: 800; /* Medium */
-
-}
-
-body{
-    font-family: 'Satoshi';
-}
-
-/* FOOTER */
 :root {
     --blue-primary: #0004FF;
     --white: #FFFFFF;
     --gray-light: #F3F3F3;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
+    font-style: normal;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Style général du footer */
@@ -37,7 +20,7 @@ footer {
     color: var(--white);
     padding: 40px 0;
     margin-top: 50px;
-    font-family: 'Satoshi Medium';
+    font-family: 'Open Sans', sans-serif;
     border-radius: 30px 30px 0 0;
 }
 
@@ -57,10 +40,10 @@ footer {
     display: inline-block;
     padding: 8px 20px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700; 
     margin-bottom: 20px;
     text-transform: uppercase;
-    font-family: 'Satoshi Bold';
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Espacement et alignement des contenus */
@@ -102,7 +85,8 @@ footer a:hover {
     background-color: var(--white);
     color: var(--blue-primary) !important;
     border-radius: 5px;
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     padding: 8px 20px;
     text-decoration: none;
     display: inline-block;
@@ -116,7 +100,7 @@ footer a:hover {
 }
 
 /* Mention légale */
-.mentions-legales {
+.mentions-legales-footer {
     text-align: left;
     margin-top: 20px;
     font-size: 0.9rem;
@@ -124,114 +108,111 @@ footer a:hover {
     border-top: 1px solid var(--white);
     padding-top: 20px;
 }
-/* FOOTER */
-
 
 .navbar-toggler {
-    border-color: #0004FF; /* Bordure en bleu */
+    border-color: var(--blue-primary); 
 }
 
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,4,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    /* Change l'icône en bleu */
 }
 
 .navbar-nav .btn-outline-primary {
     font-size: 1.2rem;
-    padding: 10px 20px; /* Ajuste le rembourrage interne */
-    font-weight: bold; /* Garde une apparence visible */
-    border-radius: 100px; /* Angle arrondi pour un design plus élégant */
-    border-color: #0004FF; /* Bordure bleue */
-    color: #0004FF; /* Couleur du texte en bleu */
+    padding: 10px 20px; 
+    font-weight: bold; 
+    border-radius: 100px; 
+    border-color: var(--blue-primary); 
+    color: var(--blue-primary); 
 }
 
 .navbar-nav .btn-outline-primary:hover {
-    background-color: #0004FF; /* Couleur de fond en bleu au survol */
-    color: white; /* Texte en blanc lors du survol */
+    background-color: var(--blue-primary); 
+    color: var(--white); 
 }
 
 .logo-navbar {
-    height: 50px; /* Ajustez la hauteur selon vos besoins */
-    width: auto; /* Maintient les proportions de l'image */
-    max-width: 100%; /* Empêche le débordement */
+    height: 50px; 
+    width: auto; 
+    max-width: 100%; 
 }
 
 .custom-navbar {
-    padding-top: 4%; /* Ajustez la valeur selon vos besoins */
+    padding-top: 4%; 
 }
 
 /* Animation pour les liens dans la version normale */
 .navbar-nav .nav-link {
-    color: #0004FF; /* Texte en bleu */
+    color: var(--blue-primary); 
     position: relative;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.3rem;
-    display: inline-block; /* Assure que l'élément est en ligne pour que le trait suive la largeur */
-    transition: color 0.3s ease; /* Transition douce pour la couleur */
+    display: inline-block; 
+    transition: color 0.3s ease; 
 }
 
 .navbar-nav .nav-link::after {
     content: "";
     position: absolute;
-    bottom: 0; /* Place le trait sous le texte */
+    bottom: 0; 
     left: 0;
-    width: 0; /* Commence à 0 (invisible) */
-    height: 2px; /* Épaisseur du trait */
-    background-color: #0004FF; /* Couleur du trait */
-    transition: width 0.3s ease; /* Animation douce */
+    width: 0; 
+    height: 2px; 
+    background-color: var(--blue-primary); 
+    transition: width 0.3s ease; 
 }
 
 /* Version desktop */
 .navbar-nav .nav-link:hover {
-    color: #0004FF; /* Assure que le texte reste bleu au survol */
+    color: var(--blue-primary); 
 }
 
 .navbar-nav .nav-link:hover::after {
-    width: 100%; /* Le trait s'étend sur toute la largeur */
+    width: 100%; 
 }
 
 /* Version mobile - Ajuste le comportement pour ne pas dépasser la largeur du texte */
 @media (max-width: 992px) {
     .navbar-nav .nav-link {
-        transition: color 0.3s ease; /* Garder la transition sur le texte */
-        display: inline-block; /* Assure que l'élément est en ligne pour que le trait suive la largeur */
-        position: relative; /* Nécessaire pour le pseudo-élément */
+        transition: color 0.3s ease; 
+        display: inline-block; 
+        position: relative; 
     }
 
     .navbar-nav .nav-link::after {
-        transition: width 0.3s ease; /* Garder la transition du trait */
-        width: 0; /* Par défaut, le trait reste invisible */
-        max-width: 100%; /* Limiter le trait à la largeur du texte */
+        transition: width 0.3s ease; 
+        width: 0;
+        max-width: 100%;
     }
 
     .navbar-nav .nav-link:hover::after {
-        width: 100%; /* Le trait s'étend au survol */
+        width: 100%; 
     }
 
     .navbar-nav .nav-link:hover {
-        color: #0004FF; /* Assure que le texte reste bleu au survol */
+        color: var(--blue-primary);
     }
 }
 
 /* Espacement entre les éléments de la navbar */
 .navbar-nav .nav-item:not(:last-child) {
-    margin-right: 20px; /* Crée un espace entre chaque élément, sauf le dernier */
+    margin-right: 20px; 
 }
 
 .navbar-nav .nav-item:last-child {
-    margin-left: 20px; /* Crée un espace avant le bouton inscription */
+    margin-left: 20px; 
     
 }
 
 /* Pour les versions mobiles */
 @media (max-width: 992px) {
     .navbar-nav .nav-item:not(:last-child) {
-        margin-right: 0px; /* Réduit l'espace entre les éléments sur mobile */
+        margin-right: 0px; 
         
     }
     .navbar-nav .nav-item:last-child {
-        margin-left: 0px; /* Réduit l'espace avant le bouton sur mobile */
+        margin-left: 0px; 
         margin-top: 10px;
 
     }
@@ -241,23 +222,23 @@ footer a:hover {
 .custom-section {
     font-family: 'Satoshi Medium';
     display: flex;
-    justify-content: space-between; /* Espace entre les éléments */
-    align-items: center; /* Centre verticalement */
+    justify-content: space-between; 
+    align-items: center; 
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
 .custom-text {
-    color: #0004FF; /* Modification ici */
+    color: var(--blue-primary); 
     font-size: 1.4rem;
     line-height: 1.5;
-    max-width: 600px; /* Texte limité en largeur */
+    max-width: 600px; 
 }
 
 .custom-title {
-    font-family: 'Satoshi Bold';
-    color: #0004FF; /* Modification ici */
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    color: var(--blue-primary); 
     font-size: 4rem;
     margin-bottom: 20px;
 }
@@ -267,63 +248,63 @@ footer a:hover {
 }
 
 .btn-custom {
-    font-family: 'Satoshi Bold', sans-serif;
-    font-size: 18px; /* Réduit légèrement la taille pour un meilleur équilibre */
-    background-color: #0004FF;
-    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px; 
+    background-color: var(--blue-primary);
+    color: var(--white);
     font-weight: bold;
     border: none;
-    padding: 10px 30px; /* Espacement horizontal plus généreux */
-    border-radius: 8px; /* Arrondi les bords */
+    padding: 10px 30px; 
+    border-radius: 8px;
     cursor: pointer;
-    transform: scale(1); /* Taille normale */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Effet fluide */
+    transform: scale(1); 
+    transition: transform 0.3s ease, background-color 0.3s ease; 
 }
 
 .btn-custom:hover {
-    transform: scale(1.1); /* Agrandissement fluide */
-    background-color: #0003CC; /* Légère variation de couleur au survol */
-    color: white;
+    transform: scale(1.1); 
+    background-color: #0003CC; 
+    color: var(--white);
 }
 
 
 .rounded-image {
-    border-radius: 50%; /* Crée un rond parfait */
-    width: 350px; /* Taille fixe */
-    height: 350px; /* Même hauteur pour garder un rond */
-    object-fit: cover; /* Maintient l'image centrée et proportionnée */
+    border-radius: 50%;
+    width: 350px;
+    height: 350px; 
+    object-fit: cover; 
 }
 
 .partners-title {
-    color: #0004FF; /* Couleur bleue que vous souhaitez */
+    color: var(--blue-primary);
     font-weight: bold;
-    font-size: 2rem; /* Ajustez la taille de la police selon votre besoin */
+    font-size: 2rem; 
 }
 
 .partner-logo {
-    width: 100px;        /* Largeur uniforme pour tous les logos */
-    height: 100px;       /* Hauteur uniforme pour tous les logos */
-    object-fit: contain; /* Contient l'image sans la déformer */
-    margin: 0 20px;      /* Espacement entre les logos */
+    width: 100px;       
+    height: 100px;       
+    object-fit: contain; 
+    margin: 0 20px;      
     display: inline-block;
 }
 
 /* Admin Card Styling */
 .admin-card {
-    border: 2px solid #0004FF; /* Bordure bleue */
-    border-radius: 20px; /* Coins arrondis */
-    box-shadow: 8px 8px 0px #000; /* Ombre décalée en noir */
+    border: 2px solid var(--blue-primary); 
+    border-radius: 20px; 
+    box-shadow: 8px 8px 0px #000; 
     text-align: left;
     padding: 20px;
-    background-color: #F3F3F3; /* Fond légèrement gris */
-    position: relative; /* Pour positionner l'icône */
-    overflow: hidden; /* Cache débordements */
+    background-color: #F3F3F3; 
+    position: relative; 
+    overflow: hidden; 
     width: 100%;
     margin: 0 auto;
 }
 
 .admin-card h3 {
-    background-color: #0004FF;
+    background-color: var(--blue-primary);
     color: #FFF;
     display: inline-block;
     padding: 8px 12px;
@@ -343,7 +324,7 @@ footer a:hover {
 .admin-card .icon-arrow {
     width: 50px;
     height: 50px;
-    background-color: #0004FF;
+    background-color: var(--blue-primary);
     border-radius: 50%;
     position: absolute;
     bottom: 20px;
@@ -359,18 +340,28 @@ footer a:hover {
     filter: brightness(0) invert(1);
 }
 h2.text-primary {
-    font-family: 'Satoshi Bold';
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    color: #0004FF !important;
+    color: var(--blue-primary) !important;
 }
 
-/* Section du formulaire*/
+/* Style du titre */
+.form-title {
+    color: var(--blue-primary);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Section du formulaire */
 .form-section {
     background-color: var(--gray-light);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+/* Champs de texte personnalisés */
 .custom-input {
     background-color: var(--white); 
     border: 1px solid var(--gray-dark); 
@@ -380,31 +371,41 @@ h2.text-primary {
     font-size: 1rem;
     width: 100%; 
 }
+
+/* Effet au focus des champs */
 .custom-input:focus {
-    border-color: var(--blue-primary); 
+    border-color: var(--blue-primary); /* Bordure bleue au focus */
     box-shadow: 0 0 0 0.2rem rgba(0, 4, 255, 0.25);
-    outline: none; 
+    outline: none; /* Retire l'outline par défaut */
 }
+
+/* Style des labels */
 .form-label {
     font-weight: bold;
     color: var(--blue-primary);
 }
+
+/* Bouton Terminer */
 .btn-primary {
     background-color: var(--blue-primary);
     border-color: var(--blue-primary);
     color: var(--white);
-    border-radius: 5px;
+    border-radius: 5px; /* Coins arrondis */
     padding: 0.75rem 1.5rem;
     font-size: 1.1rem;
     transition: transform 0.3s ease;
 }
+
 .btn-primary:hover {
     transform: scale(1.05);
     background-color: var(--blue-primary);
 }
+
+/* Ajustement pour aligner le bouton à gauche */
 .button-container {
     text-align: left;
 }
+/* Ajout pour la mise en page */
 .torute {
     width: 100%;
     max-width: 350px; 
@@ -415,16 +416,215 @@ textarea.custom-input {
     height: 100%; 
     resize: none; 
 }
+
+/* Boutons radio par défaut */
 input[type="radio"] {
     accent-color: var(--blue-primary); 
     width: 18px; 
     height: 18px;
 }
+
+/* Pour les labels associés aux boutons radio */
 input[type="radio"]:checked + label {
     color: var(--blue-primary); 
     font-weight: bold; 
 }
+
+/* Optionnel : survol des labels */
 label:hover {
     cursor: pointer; 
     text-decoration: underline; 
+}
+
+body {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Section Événements */
+.events-section {
+    padding: 2rem;
+    color: var(--blue-primary);
+}
+
+/* Titre principal */
+.events-title {
+    font-size: 2.5rem;
+    font-family: 'Satoshi Bold';
+    color: var(--blue-primary);
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--blue-primary);
+}
+
+.events-description {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.arrow-icon {
+    color: var(--blue-primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.en-savoir-plus {
+    color: var(--blue-primary);
+    text-decoration: none;
+    font-family: 'Satoshi Medium';
+}
+
+/* Conteneur principal du calendrier */
+.calendar-container {
+    background-color: var(--gray-light); 
+    border: 2px solid var(--blue-primary); 
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #000; 
+    padding: 20px;
+    max-width: 350px; 
+    margin: 0 auto; 
+    position: relative;
+}
+
+/* Stylisation du calendrier existant */
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-nav {
+    background-color: var(--blue-primary);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px #888;
+}
+
+.btn-nav:hover {
+    background-color: var(--blue-primary);
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-table td {
+    border: 1px solid var(--gray-light);
+}
+
+.calendar-table td:hover {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+/* Texte en bleu */
+.events-title {
+    color: var(--blue-primary); /* Bleu vif */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.events-description {
+    color: var(--blue-primary); /* Bleu plus profond */
+    font-size: 1.2rem;
+}
+
+/* Texte en bleu, plus vers la gauche */
+.events-title {
+    color: var(--blue-primary); 
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.events-description {
+    color: var(--blue-primary); 
+    font-size: 1.2rem;
+    margin-bottom: 40px ; 
+}
+
+/* Image réduite, ronde avec marge */
+.app-image {
+    width: 50%; 
+    margin-bottom: 40px ; 
+}
+
+/* Styles spécifiques à la page de mentions légales */
+.mentions-legales-page .mentions-legales {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mentions-legales-page .mentions-legales h1 {
+    font-family: 'Satoshi Bold';
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--blue-primary);
+    text-align: center;
+}
+
+.mentions-legales-page .mentions-legales h2 {
+    font-family: 'Satoshi Medium';
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--blue-primary);
+    border-bottom: 2px solid var(--blue-primary);
+    padding-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales p,
+.mentions-legales-page .mentions-legales ul {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mentions-legales-page .mentions-legales ul {
+    padding-left: 20px;
+}
+
+.mentions-legales-page .mentions-legales li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales address {
+    font-style: normal;
+    color: var(--blue-primary);
+    background-color: var(--gray-light);
+    padding: 10px;
+    border-left: 5px solid var(--blue-primary);
+    margin-top: 20px;
+}
+
+.mentions-legales-page .text-primary {
+    color: var(--blue-primary);
+    font-weight: bold;
 }
