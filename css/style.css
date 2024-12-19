@@ -5,29 +5,13 @@
 }
 
 @font-face {
-    font-family: 'Satoshi';
-    src: url('fonts\Satoshi-Regular.ttf');
-    font-weight: 400; /* Normal (Regular) */
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap');
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Satoshi Medium';
-    src: url('fonts\Satoshi-Medium.ttf');
-    font-weight: 500; /* Medium */
-    font-style: medium;
-}
-
-@font-face {
-    font-family: 'Satoshi Bold';
-    src: url('fonts\Satoshi-Bold.ttf');
-    font-style: bold;
-    font-weight: 800; /* Medium */
-
-}
-
 body{
-    font-family: 'Satoshi';
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Style général du footer */
@@ -36,7 +20,7 @@ footer {
     color: var(--white);
     padding: 40px 0;
     margin-top: 50px;
-    font-family: 'Satoshi Medium';
+    font-family: 'Open Sans', sans-serif;
     border-radius: 30px 30px 0 0;
 }
 
@@ -56,10 +40,10 @@ footer {
     display: inline-block;
     padding: 8px 20px;
     text-align: center;
-    font-weight: bold;
+    font-weight: 700; 
     margin-bottom: 20px;
     text-transform: uppercase;
-    font-family: 'Satoshi Bold';
+    font-family: 'Open Sans', sans-serif;
 }
 
 /* Espacement et alignement des contenus */
@@ -101,7 +85,8 @@ footer a:hover {
     background-color: var(--white);
     color: var(--blue-primary) !important;
     border-radius: 5px;
-    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     padding: 8px 20px;
     text-decoration: none;
     display: inline-block;
@@ -115,7 +100,7 @@ footer a:hover {
 }
 
 /* Mention légale */
-.mentions-legales {
+.mentions-legales-footer {
     text-align: left;
     margin-top: 20px;
     font-size: 0.9rem;
@@ -123,8 +108,6 @@ footer a:hover {
     border-top: 1px solid var(--white);
     padding-top: 20px;
 }
-/* FOOTER */
-
 
 .navbar-toggler {
     border-color: var(--blue-primary); 
@@ -253,9 +236,9 @@ footer a:hover {
 }
 
 .custom-title {
-    font-family: 'Satoshi Bold';
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
     color: var(--blue-primary); 
-    font-weight: bold;
     font-size: 4rem;
     margin-bottom: 20px;
 }
@@ -265,7 +248,7 @@ footer a:hover {
 }
 
 .btn-custom {
-    font-family: 'Satoshi Bold', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px; 
     background-color: var(--blue-primary);
     color: var(--white);
@@ -359,7 +342,7 @@ footer a:hover {
 }
 
 h2.text-primary {
-    font-family: 'Satoshi Bold';
+    font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     color: var(--blue-primary) !important;
 }
@@ -438,20 +421,212 @@ textarea.custom-input {
 
 /* Boutons radio par défaut */
 input[type="radio"] {
-    accent-color: var(--blue-primary); /* Colore le bouton radio */
-    width: 18px; /* Taille du bouton */
+    accent-color: var(--blue-primary); 
+    width: 18px; 
     height: 18px;
 }
 
 /* Pour les labels associés aux boutons radio */
 input[type="radio"]:checked + label {
-    color: var(--blue-primary); /* Colore le texte du label quand le bouton est sélectionné */
-    font-weight: bold; /* Ajoute un effet visuel en rendant le texte plus épais */
+    color: var(--blue-primary); 
+    font-weight: bold; 
 }
 
 /* Optionnel : survol des labels */
 label:hover {
-    cursor: pointer; /* Change le curseur pour indiquer que le label est cliquable */
-    text-decoration: underline; /* Ajoute un soulignement au survol */
+    cursor: pointer; 
+    text-decoration: underline; 
 }
 
+body {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Section Événements */
+.events-section {
+    padding: 2rem;
+    color: var(--blue-primary);
+}
+
+/* Titre principal */
+.events-title {
+    font-size: 2.5rem;
+    font-family: 'Satoshi Bold';
+    color: var(--blue-primary);
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: var(--blue-primary);
+}
+
+.events-description {
+    font-size: 1rem;
+    color: #333;
+}
+
+
+.arrow-icon {
+    color: var(--blue-primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.en-savoir-plus {
+    color: var(--blue-primary);
+    text-decoration: none;
+    font-family: 'Satoshi Medium';
+}
+
+/* Conteneur principal du calendrier */
+.calendar-container {
+    background-color: var(--gray-light); 
+    border: 2px solid var(--blue-primary); 
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #000; 
+    padding: 20px;
+    max-width: 350px; 
+    margin: 0 auto; 
+    position: relative;
+}
+
+/* Stylisation du calendrier existant */
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-nav {
+    background-color: var(--blue-primary);
+    color: var(--white);
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px #888;
+}
+
+.btn-nav:hover {
+    background-color: var(--blue-primary);
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-table td {
+    border: 1px solid var(--gray-light);
+}
+
+.calendar-table td:hover {
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+/* Texte en bleu */
+.events-title {
+    color: var(--blue-primary); /* Bleu vif */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.events-description {
+    color: var(--blue-primary); /* Bleu plus profond */
+    font-size: 1.2rem;
+}
+
+/* Texte en bleu, plus vers la gauche */
+.events-title {
+    color: var(--blue-primary); 
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.events-description {
+    color: var(--blue-primary); 
+    font-size: 1.2rem;
+    margin-bottom: 40px ; 
+}
+
+/* Image réduite, ronde avec marge */
+.app-image {
+    width: 50%; 
+    margin-bottom: 40px ; 
+}
+
+/* Styles spécifiques à la page de mentions légales */
+.mentions-legales-page .mentions-legales {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mentions-legales-page .mentions-legales h1 {
+    font-family: 'Satoshi Bold';
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--blue-primary);
+    text-align: center;
+}
+
+.mentions-legales-page .mentions-legales h2 {
+    font-family: 'Satoshi Medium';
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--blue-primary);
+    border-bottom: 2px solid var(--blue-primary);
+    padding-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales p,
+.mentions-legales-page .mentions-legales ul {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mentions-legales-page .mentions-legales ul {
+    padding-left: 20px;
+}
+
+.mentions-legales-page .mentions-legales li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales address {
+    font-style: normal;
+    color: var(--blue-primary);
+    background-color: var(--gray-light);
+    padding: 10px;
+    border-left: 5px solid var(--blue-primary);
+    margin-top: 20px;
+}
+
+.mentions-legales-page .text-primary {
+    color: var(--blue-primary);
+    font-weight: bold;
+}

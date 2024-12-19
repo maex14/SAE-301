@@ -7,6 +7,7 @@
     <title>Footer</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -60,8 +61,8 @@
             </div>
 
             <!-- Mention légale -->
-            <div class="mentions-legales">
-                <p>© 2024 Cvp43. Tous droits réservés | <a href="#">Mentions légales</a></p>
+            <div class="mentions-legales-footer">
+                <p>© 2024 Cvp43. Tous droits réservés | <a href="mentionlegal.php">Mentions légales</a></p>
             </div>
         </div>
     </footer>
