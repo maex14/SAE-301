@@ -353,15 +353,78 @@ footer a:hover {
     justify-content: center;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 .admin-card .icon-arrow img {
     width: 50%;
     height: auto;
     filter: brightness(0) invert(1);
 }
-
 h2.text-primary {
     font-family: 'Satoshi Bold';
     font-weight: 700;
     color: #0004FF !important;
+}
+
+/* Section du formulaire*/
+.form-section {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.custom-input {
+    background-color: var(--white); 
+    border: 1px solid var(--gray-dark); 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    color: #333; 
+    font-size: 1rem;
+    width: 100%; 
+}
+.custom-input:focus {
+    border-color: var(--blue-primary); 
+    box-shadow: 0 0 0 0.2rem rgba(0, 4, 255, 0.25);
+    outline: none; 
+}
+.form-label {
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+.btn-primary {
+    background-color: var(--blue-primary);
+    border-color: var(--blue-primary);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: var(--blue-primary);
+}
+.button-container {
+    text-align: left;
+}
+.torute {
+    width: 100%;
+    max-width: 350px; 
+    object-fit: cover; 
+    margin: 0 auto;
+}
+textarea.custom-input {
+    height: 100%; 
+    resize: none; 
+}
+input[type="radio"] {
+    accent-color: var(--blue-primary); 
+    width: 18px; 
+    height: 18px;
+}
+input[type="radio"]:checked + label {
+    color: var(--blue-primary); 
+    font-weight: bold; 
+}
+label:hover {
+    cursor: pointer; 
+    text-decoration: underline; 
 }

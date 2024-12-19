@@ -1,6 +1,6 @@
 <?php
 // Inclure la configuration de la base de données
-include("config/configuration.php");  // Assurez-vous que le chemin est correct
+include("config/configuration.php"); 
 
 // Récupérer l'ID de l'article à partir de l'URL
 if (isset($_GET['id'])) {
