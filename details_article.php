@@ -1,6 +1,6 @@
 <?php
 // Inclure la configuration de la base de données
-include("config/configuration.php");  // Assurez-vous que le chemin est correct
+include("config/configuration.php"); 
 
 // Récupérer l'ID de l'article à partir de l'URL
 if (isset($_GET['id'])) {
@@ -35,11 +35,12 @@ if (isset($_GET['id'])) {
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détails de l'article</title>
 </head>
+
 <body>
     <h1><?php echo htmlspecialchars($article['titre']); ?></h1>
     <p><strong>Auteur:</strong> <?php echo htmlspecialchars($article['auteur']); ?></p>
@@ -50,4 +51,5 @@ if (isset($_GET['id'])) {
     </div>
     <a href="TriageNews_ajax.html">Retour à la liste des articles</a>
 </body>
+
 </html>
