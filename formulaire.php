@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plongée Sous-Marine CVP43</title>
+    <title>Formulaire Plongé</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Plongez dans une aventure inoubliable avec notre formation de plongée sous-marine. Que vous soyez débutant ou passionné en quête de perfectionnement, nos cours sont adaptés à tous les niveaux. Encadrés par des professionnels expérimentés, vous apprendrez les techniques essentielles pour explorer les fonds marins en toute sécurité et avec confiance.
             </p>
             <!-- Image de la tortue -->
-            <img src="image\tortue.png" alt="Tortue de mer" class="position-absolute end-0 top-0" style="max-width: 150px;">
+            <img src="images\tortue.png" alt="Tortue de mer" class="position-absolute end-0 top-0" style="max-width: 150px;">
         </div>
         
         <!-- Formulaire -->
