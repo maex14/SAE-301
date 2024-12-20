@@ -32,6 +32,7 @@ if (isset($_GET['id'])) {
     exit;
 }
 ?>
+<?php include('navbar.php'); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -39,17 +40,45 @@ if (isset($_GET['id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/news.css">
 </head>
 
 <body>
-    <h1><?php echo htmlspecialchars($article['titre']); ?></h1>
-    <p><strong>Auteur:</strong> <?php echo htmlspecialchars($article['auteur']); ?></p>
-    <p><strong>Date de publication:</strong> <?php echo htmlspecialchars($article['date_publication']); ?></p>
-    <div>
-        <strong>Contenu:</strong>
-        <p><?php echo nl2br(htmlspecialchars($article['contenu'])); ?></p>
+
+    <div class="container my-5">
+        <article class="article">
+            <h1 class="text-primary"><?php echo htmlspecialchars($article['titre']); ?></h1>
+            <p><strong>Auteur:</strong> <?php echo htmlspecialchars($article['auteur']); ?></p>
+            <p><strong>Date de publication:</strong> <?php echo htmlspecialchars($article['date_publication']); ?></p>
+            <div>
+                <strong>Contenu:</strong>
+                <p><?php echo nl2br(htmlspecialchars($article['contenu'])); ?></p>
+            </div>
+        </article>
+
+        <section class="d-flex justify-content-center align-items-center vh-20">
+            <div class="custom-card text-center">
+                <h1 class="custom-title-card">Distribution du matériel</h1>        
+                <!-- Liste centrée -->
+                <ul class="custom-list d-inline-block text-start">
+                    <li><strong>Les mardis :</strong> de 17 H 30 à 18 H 00</li>
+                    <li><strong>Les dimanches :</strong> de 10 H 00 à 10 H 30</li>
+                    <li>La restitution du matériel rincé aura <strong>TOUJOURS</strong> lieu les jeudis de 18 H à 18 H 30</li>
+                </ul>
+                <p class="lead">Votre CACI de moins de 1 an vous sera demandé à la première plongée au lac afin d'être photographié et stocké dans nos fichiers en cas de contrôle inopiné de la gendarmerie.</p>
+                <p class="lead">Bonnes plongées à tous !</p>
+                <a href="#" class="btn btn-outline-primary btn-inscription">Inscrivez-vous</a> <br>
+                <a href="les_news.php" class="btn btn-outline-primary my-3">Retour à la liste des articles</a>
+            </div>
+        </section>
+
+
     </div>
-    <a href="TriageNews_ajax.html">Retour à la liste des articles</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
+
+<?php include('footer.php'); ?>

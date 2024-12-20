@@ -1,16 +1,5 @@
 <?php
-// Connexion à la base de données
-$host = 'localhost';
-$dbname = 'webweek';
-$username = 'root';
-$password = '';
-
-try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Erreur de connexion : " . $e->getMessage());
-}
+require_once 'config.php';
 
 // Ajouter des identifiants admin préenregistrés
 $admins = [
@@ -85,53 +74,59 @@ if (isset($_GET['action']) && $_GET['action'] === 'deconnexion') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Lien vers le CSS global -->
+    <link rel="stylesheet" href="style.css">
     <title>Connexion / Inscription</title>
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="text-center">Connexion / Inscription</h2>
+    <h2 class="text-center text-primary">Connexion / Inscription</h2>
 
     <div class="row mt-4">
         <!-- Formulaire d'inscription -->
         <div class="col-md-6">
-            <h3>Inscription</h3>
-            <form method="POST">
-                <input type="hidden" name="action" value="inscription">
-                <div class="mb-3">
-                    <label for="nom" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom" required>
-                </div>
-                <div class="mb-3">
-                    <label for="prenom" class="form-label">Prénom</label>
-                    <input type="text" class="form-control" id="prenom" name="prenom" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-primary">S'inscrire</button>
-            </form>
+            <div class="form-container">
+                <h3 class="form-title">Inscription</h3>
+                <form method="POST">
+                    <input type="hidden" name="action" value="inscription">
+                    <div class="form-group">
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="form-submit">S'inscrire</button>
+                </form>
+            </div>
         </div>
 
         <!-- Formulaire de connexion -->
         <div class="col-md-6">
-            <h3>Connexion</h3>
-            <form method="POST">
-                <input type="hidden" name="action" value="connexion">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" required>
-                </div>
-                <button type="submit" class="btn btn-success">Se connecter</button>
-            </form>
+            <div class="form-container">
+                <h3 class="form-title">Connexion</h3>
+                <form method="POST">
+                    <input type="hidden" name="action" value="connexion">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="form-submit">Se connecter</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

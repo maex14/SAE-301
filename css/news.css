@@ -1,0 +1,704 @@
+
+/* Déclaration des polices */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('fonts/Satoshi-Bold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Satoshi', sans-serif;
+}
+
+/* Style général du footer */
+footer {
+    background-color: #0004FF; /* Bleu primaire */
+    color: #ffffff; /* Blanc */
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 30px 30px 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+/* Conteneur principal du footer */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Espacement latéral */
+}
+
+/* Conteneur interne pour les colonnes */
+.container-smaller {
+    max-width: 100%;
+}
+
+/* Logo de la tortue */
+.footer-logo {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Titres dans un bloc rond */
+.footer-title {
+    background-color: #ffffff; /* Blanc */
+    color: #0004FF; /* Bleu primaire */
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px 25px;
+    text-align: center;
+    font-weight: 700; 
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Espacement et alignement des contenus dans chaque colonne */
+.footer-column {
+    text-align: left;
+    margin-bottom: 20px; 
+}
+
+/* Liens et icônes */
+footer a {
+    color: #ffffff; /* Blanc */
+    text-decoration: underline;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Espacement entre les icônes */
+    justify-content: center; /* Centrer les icônes horizontalement */
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: #ffffff; /* Blanc */
+}
+
+.social-icons a:hover {
+    opacity: 0.8;
+}
+
+/* Bouton Inscrivez-vous */
+.btn-inscription {
+    background-color: #ffffff; /* Blanc */
+    color: #0004FF !important; /* Bleu primaire */
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    padding: 12px 25px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+    text-align: center; /* Centrer le texte dans le bouton */
+}
+
+.btn-inscription:hover {
+    transform: scale(1.1);
+    background-color: #ffffff; /* Blanc */
+    text-decoration: none;
+}
+
+/* Mention légale */
+.mentions-legales-footer {
+    text-align: center; /* Centrer le texte */
+    font-size: 0.9rem;
+    color: #ffffff; /* Blanc */
+    border-top: 1px solid #ffffff; /* Blanc */
+    padding-top: 20px;
+}
+
+/* Alignement uniforme des colonnes */
+.footer-column {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Responsivité pour mobile */
+@media (max-width: 767px) {
+    .footer-column {
+        text-align: center; /* Centrer le contenu des colonnes */
+        padding: 0 10px;
+    }
+
+    .footer-logo {
+        width: 40px;
+        margin-right: 10px;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+        margin-right: 15px;
+    }
+
+    .footer-column ul li a {
+        font-size: 16px;
+    }
+
+    .mentions-legales-footer {
+        text-align: center; /* Centrer le texte des mentions légales */
+    }
+  
+    .btn-inscription {
+        width: 80%; /* Rendre le bouton plein écran */
+        padding: 12px 0; /* Ajuster la hauteur du bouton */
+        min-width: 0; /* Supprimer la largeur minimale */
+        text-align: center; /* Centrer le texte dans le bouton */
+    }
+
+    .btn-inscription:hover {
+        background-color: #FFFFFF; /* Couleur de fond différente pour les petits écrans */
+    }
+}
+.mentions-legales-page .mentions-legales {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mentions-legales-page .mentions-legales h1 {
+    font-family: 'Satoshi Bold';
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #0004FF;
+    text-align: center;
+}
+
+.mentions-legales-page .mentions-legales h2 {
+    font-family: 'Satoshi Medium';
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #0004FF;
+    border-bottom: 2px solid #0004FF;
+    padding-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales p,
+.mentions-legales-page .mentions-legales ul {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mentions-legales-page .mentions-legales ul {
+    padding-left: 20px;
+}
+
+.mentions-legales-page .mentions-legales li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+.mentions-legales-page .mentions-legales address {
+    font-style: normal;
+    color: #0004FF;
+    background-color: #F3F3F3;
+    padding: 10px;
+    border-left: 5px solid #0004FF;
+    margin-top: 20px;
+}
+
+.mentions-legales-page .text-primary {
+    color: #0004FF;
+    font-weight: bold;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border-color: #0004FF;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,4,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Navbar Button Style */
+.navbar-nav .btn-outline-primary {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 100px;
+    border-color: #0004FF;
+    color: #0004FF;
+}
+
+.navbar-nav .btn-outline-primary:hover {
+    background-color: #0004FF;
+    color: #FFFFFF;
+}
+
+/* Logo Navbar */
+.logo-navbar {
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+}
+
+.custom-navbar {
+    padding-top: 4%;
+}
+
+/* Animation pour les liens dans la version normale */
+.navbar-nav .nav-link {
+    color: #0004FF;
+    position: relative;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.3rem;
+    display: inline-block;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0004FF;
+    transition: width 0.3s ease;
+}
+
+/* Version desktop */
+.navbar-nav .nav-link:hover {
+    color: #0004FF;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Version mobile - Ajuste le comportement pour ne pas dépasser la largeur du texte */
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        transition: color 0.3s ease;
+        display: inline-block;
+        position: relative;
+    }
+
+    .navbar-nav .nav-link::after {
+        transition: width 0.3s ease;
+        width: 0;
+        max-width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+}
+
+/* Espacement entre les éléments de la navbar */
+.navbar-nav .nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-left: 20px;
+}
+
+/* Pour les versions mobiles */
+@media (max-width: 992px) {
+    .navbar-nav .nav-item:not(:last-child) {
+        margin-right: 0px;
+    }
+    .navbar-nav .nav-item:last-child {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+
+/* Section personnalisée */
+.custom-section {
+    font-family: 'Satoshi Medium';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.custom-text {
+    color: #0004FF;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+.custom-title {
+    font-weight: 800;
+    color: #0004FF;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.custom-paragraph {
+    margin-bottom: 30px;
+    color: #0004FF;
+}
+
+.btn-custom {
+
+    font-size: 18px;
+    background-color: #0004FF;
+    color: #FFFFFF;
+    font-weight: bold;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: scale(1.1);
+    background-color: #0003CC;
+    color: #FFFFFF;
+}
+
+/* Image arrondie */
+.rounded-image {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Partenaires */
+.partners-title {
+    color: #0004FF;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.partner-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 20px;
+    display: inline-block;
+}
+
+/* Admin Card Styling */
+.admin-card {
+    border: 2px solid #0004FF;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #000;
+    text-align: left;
+    padding: 20px;
+    background-color: #F3F3F3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.admin-card h3 {
+    background-color: #0004FF;
+    color: #FFF;
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.admin-card p {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+/* Article */
+.article {
+    border: 2px solid #0004FF;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #000;
+    text-align: left;
+    padding: 20px;
+    background-color: #F3F3F3;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Sélecteurs et boutons */
+select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid #0004FF;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="radio"] {
+    accent-color: #0004FF;
+    width: 18px;
+    height: 18px;
+}
+
+/* Flèche icône */
+.admin-card .icon-arrow {
+    width: 50px;
+    height: 50px;
+    background-color: #0004FF;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.admin-card .icon-arrow img {
+    width: 50%;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+/* Section Événements */
+.events-section {
+    padding: 2rem;
+    color: #0004FF;
+}
+
+/* Titre principal */
+.events-title {
+    font-size: 2.5rem;
+    font-family: 'Satoshi Bold';
+    color: #0004FF;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #0004FF;
+}
+
+.events-description {
+    font-size: 1rem;
+    color: #333;
+}
+
+.arrow-icon {
+    color: #0004FF;
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.en-savoir-plus {
+    color: #0004FF;
+    text-decoration: none;
+    font-family: 'Satoshi Medium';
+}
+
+/* Conteneur principal du calendrier */
+.calendar-container {
+    background-color: #F3F3F3;
+    border: 2px solid #0004FF;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0px #000;
+    padding: 20px;
+    max-width: 350px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Stylisation du calendrier existant */
+.calendar {
+    text-align: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header span {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.btn-nav {
+    background-color: #0004FF;
+    color: #FFFFFF;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px #888;
+}
+
+.btn-nav:hover {
+    background-color: #0004FF;
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar-table th,
+.calendar-table td {
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-table td {
+    border: 1px solid #F3F3F3;
+}
+
+.calendar-table td:hover {
+    background-color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* Texte en bleu */
+.events-title {
+    color: #0004FF; /* Bleu vif */
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.events-description {
+    color: #0004FF; /* Bleu plus profond */
+    font-size: 1.2rem;
+}
+
+.events-description {
+    color: #0004FF;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Image réduite, ronde avec marge */
+.app-image {
+    width: 50%;
+    margin-bottom: 40px;
+}
+
+
+.form-title {
+    color: var(--blue-primary);
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.form-section {
+    background-color: var(--gray-light);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-input {
+    background-color: var(--white); 
+    border: 1px solid var(--gray-dark); 
+    border-radius: 5px; 
+    padding: 10px 15px; 
+    color: #333; 
+    font-size: 1rem;
+    width: 100%; 
+}
+
+.custom-input:focus {
+    border-color: var(--blue-primary); / Bordure bleue au focus /
+    box-shadow: 0 0 0 0.2rem rgba(0, 4, 255, 0.25);
+    outline: none; / Retire l'outline par défaut /
+}
+
+.form-label {
+    font-weight: bold;
+    color: var(--blue-primary);
+}
+
+.btn-primary {
+    background-color: var(--blue-primary);
+    border-color: var(--blue-primary);
+    color: var(--white);
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: var(--blue-primary);
+}
+
+.button-container {
+    text-align: left;
+}
+
+.torute {
+    width: 100%;
+    max-width: 350px; 
+    object-fit: cover; 
+    margin: 0 auto;
+}
+
+textarea.custom-input {
+    height: 100%; 
+    resize: none; 
+}
+
+input[type="radio"] {
+    accent-color: var(--blue-primary); 
+    width: 18px; 
+    height: 18px;
+}
+
+input[type="radio"]:checked + label {
+    color: var(--blue-primary); 
+    font-weight: bold; 
+}
+
+label:hover {
+    cursor: pointer; 
+    text-decoration: underline; 
+}

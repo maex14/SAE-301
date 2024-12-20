@@ -1,6 +1,6 @@
 // Fonction pour récupérer tous les articles via l'API
 function fetchAllArticles() {
-    fetch('API/Trieur.php')
+    fetch('api/Trieur.php')
         .then(response => response.json())
         .then(data => {
             const articlesList = document.getElementById('articles-list');

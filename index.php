@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="css/news.css">
     <title>Accueil CVP43</title>
 </head>
-
 <body>
     <!-- Header Navigation -->
 
     <?php 
-    session_start(); 
     include('navbar.php'); 
+    require_once 'config.php';
+ // Configuration pour la base de données
     ?>
 
-        <!-- Qui sommes-nous -->
+    <!-- Qui sommes-nous -->
     <div class="container">
         <div class="row custom-section align-items-center">
             <!-- Texte -->
@@ -53,67 +50,53 @@
         <h2 class="partners-title text-center mb-4">Nos Partenaires</h2>
         <div class="row justify-content-center">
             <div class="col-4 text-center">
-                <img src="images\bonbon_q.png" alt="Partenaire 1" class="img-fluid partner-logo" loading="lazy">
+                <img src="images/bonbon_q.png" alt="Partenaire 1" class="img-fluid partner-logo" loading="lazy">
             </div>
             <div class="col-4 text-center">
-                <img src="images\6181783d9d6e7_logoL181.png" alt="Partenaire 2" class="img-fluid partner-logo" loading="lazy">
+                <img src="images/6181783d9d6e7_logoL181.png" alt="Partenaire 2" class="img-fluid partner-logo" loading="lazy">
             </div>
             <div class="col-4 text-center">
-
-                <img src="images\5d9ebe5a09f80_FFESSMLogoFFESSMquadri500300.png" alt="Partenaire 3" class="img-fluid partner-logo" loading="lazy">
+                <img src="images/5d9ebe5a09f80_FFESSMLogoFFESSMquadri500300.png" alt="Partenaire 3" class="img-fluid partner-logo" loading="lazy">
             </div>
         </div>
     </section>
 
-
-    <!-- Dernières news -->
+        <!-- Dernières news -->
     <section class="container my-5">
         <h2 class="text-primary mb-4">Dernières news :</h2>
         <div class="row gx-3 gy-4">
-            <div class="col-md-6">
-                <div class="admin-card">
-                    <h3>Modifier une News</h3>
-                    <p>Mettez à jour les informations des news existantes.</p>
-                    <a href="modifierNews.php" class="icon-arrow">
-                        <img src="images\icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="admin-card">
-                    <h3>Ajouter une News</h3>
-                    <p>Ajoutez de nouvelles informations pour tenir les membres informés.</p>
-                    <a href="ajouterNews.php" class="icon-arrow">
-                        <img src="images\icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="admin-card">
-                    <h3>Supprimer une News</h3>
-                    <p>Retirez les informations obsolètes ou incorrectes.</p>
-                    <a href="supprimerNews.php" class="icon-arrow">
-                        <img src="images\icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="admin-card">
-                    <h3>Voir les Archives</h3>
-                    <p>Accédez aux anciennes informations pour les consulter.</p>
-                    <a href="voirArchives.php" class="icon-arrow">
-                        <img src="images\icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
+            <?php
+            try {
+                require_once 'config.php';
+
+
+                // Récupérer les 4 dernières news
+                $stmt = $pdo->prepare("SELECT titre, contenu, date_publication, id_news FROM news ORDER BY date_publication DESC LIMIT 4");
+                $stmt->execute();
+                $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                foreach ($news as $article) {
+                    echo '<div class="col-md-6">';
+                    echo '<div class="admin-card">';
+                    echo '<h3>' . htmlspecialchars($article['titre']) . '</h3>';
+                    echo '<p>' . htmlspecialchars(substr($article['contenu'], 0, 100)) . '...</p>';
+                    echo '<small><em>Publié le ' . htmlspecialchars(date("d-m-Y", strtotime($article['date_publication']))) . '</em></small>';
+                    echo '<a href="details_article.php?id=' . htmlspecialchars($article['id_news']) . '" class="icon-arrow">';
+                    echo '<img src="images/icon arrow.png" alt="Flèche">';
+                    echo '</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } catch (PDOException $e) {
+                echo '<p class="text-danger">Erreur : ' . $e->getMessage() . '</p>';
+            }
+            ?>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Footer -->
-    <?php include('footer.php'); ?>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
-
 </html>
+    <?php include('footer.php'); ?>

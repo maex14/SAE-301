@@ -58,8 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire Plongé</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/news.css">
 </head>
 <body>
     
@@ -71,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 Plongez dans une aventure inoubliable avec notre formation de plongée sous-marine. Que vous soyez débutant ou passionné en quête de perfectionnement, nos cours sont adaptés à tous les niveaux. Encadrés par des professionnels expérimentés, vous apprendrez les techniques essentielles pour explorer les fonds marins en toute sécurité et avec confiance.
             </p>
             <!-- Image de la tortue -->
-            <img src="images\tortue.png" alt="Tortue de mer" class="position-absolute end-0 top-0" style="max-width: 150px;">
+            <img src="images\tortue.png" alt="Tortue de mer" class="position-absolute end-0 top-5" style="max-width: 150px;">
         </div>
         
         <!-- Formulaire -->
@@ -163,8 +162,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </form>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
     

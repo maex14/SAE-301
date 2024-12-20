@@ -1,6 +1,6 @@
 <?php
 // Pour se connecter à la base de données
-include("../config/configuration.php");
+include("../config.php");
 
 // Connexion à la base de données
 try {

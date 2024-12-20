@@ -1,22 +1,20 @@
+<?php include('navbar.php'); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="ms.css">
+    <link rel="stylesheet" href="css/news.css">
+    
 
     <title>Les News</title>
 </head>
 
 <body>
-    <!-- Header Navigation -->
-
-    <?php include('navbar.php'); ?>
-
-    <!-- Qui sommes-nous -->
     <div class="container">
         <div class="custom-section">
             <div class="custom-text">
@@ -29,56 +27,31 @@
         </div>
     </div>
 
-
-
     <!-- Dernières news -->
     <section class="container my-5">
         <!-- Conteneur centré pour le bouton -->
         <div class="mb-4">
-            <a href="#" class="btn btn-custom">Filtrer</a>
-        </div>
-        <div class="row gx-3 gy-4">
-            <div class="col-12">
-                <div class="admin-card">
-                    <h3>Modifier une News</h3>
-                    <p>Mettez à jour les informations des news existantes.</p>
-                    <a href="modifierNews.php" class="icon-arrow">
-                        <img src="images/icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="admin-card">
-                    <h3>Ajouter une News</h3>
-                    <p>Ajoutez de nouvelles informations pour tenir les membres informés.</p>
-                    <a href="ajouterNews.php" class="icon-arrow">
-                        <img src="images/icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="admin-card">
-                    <h3>Supprimer une News</h3>
-                    <p>Retirez les informations obsolètes ou incorrectes.</p>
-                    <a href="supprimerNews.php" class="icon-arrow">
-                        <img src="images/icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="admin-card">
-                    <h3>Voir les Archives</h3>
-                    <p>Accédez aux anciennes informations pour les consulter.</p>
-                    <a href="voirArchives.php" class="icon-arrow">
-                        <img src="images/icon arrow.png" alt="Flèche">
-                    </a>
-                </div>
+            <select id="mois" onchange="filterArticlesByMonth()">
+            <option value="0">tous les mois</option>
+            <option value="1">Janvier</option>
+            <option value="2">Février</option>
+            <option value="3">Mars</option>
+            <option value="4">Avril</option>
+            <option value="5">Mai</option>
+            <option value="6">Juin</option>
+            <option value="7">Juillet</option>
+            <option value="8">Août</option>
+            <option value="9">Septembre</option>
+            <option value="10">Octobre</option>
+            <option value="11">Novembre</option>
+            <option value="12">Décembre</option>
+    </select>
+            <div class="container my-5">
+                <div id="articles-list"></div>
             </div>
         </div>
     </section>
-    <?php include('footer.php'); ?>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
+        <script src="js/triage.js"></script>
 </html>
+<?php include('footer.php'); ?>
